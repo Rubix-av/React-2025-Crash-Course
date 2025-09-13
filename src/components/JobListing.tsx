@@ -1,15 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { FaMapMarker } from "react-icons/fa";
-
-type Job = {
-  type: string;
-  title: string;
-  description: string;
-  salary: string;
-  location: string;
-  id: string;
-};
+import type { Job } from "../types/job";
 
 const JobListing = ({ job }: { job: Job }) => {
   const [showFullDescription, setShowFullDescription] = useState(false);
@@ -48,7 +40,7 @@ const JobListing = ({ job }: { job: Job }) => {
               {job.location}
             </div>
             <Link
-              to={`/job/${job.id}`}
+              to={`/jobs/${job.id}`}
               className="h-[36px] bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-lg text-center text-sm"
             >
               Read More
